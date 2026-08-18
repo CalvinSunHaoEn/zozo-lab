@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <meta name="description" content="ZOZO Lab discovers real-life archetypes and turns them into tangible collectible characters." />
   <meta property="og:title" content="ZOZO Lab" />
   <meta property="og:description" content="These are not toys. They are us." />
@@ -40,11 +40,13 @@
 
 html {
   scroll-behavior: smooth;
+  background: var(--charcoal);
 }
 
 body {
   margin: 0;
   background: var(--paper);
+  min-width: 320px;
   color: var(--ink);
   font-family: var(--font-primary);
   font-size: 16px;
@@ -686,6 +688,9 @@ h1 {
     grid-template-columns: 1fr auto;
     min-height: 64px;
     padding-inline: 18px;
+    top: 0;
+    min-height: calc(64px + env(safe-area-inset-top, 0px));
+    padding-top: env(safe-area-inset-top, 0px);
   }
 
   .brand-mark,
