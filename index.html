@@ -48,7 +48,7 @@ html {
 
 body {
   margin: 0;
-  background: var(--paper);
+  background: var(--charcoal);
   min-width: 320px;
   color: var(--ink);
   font-family: var(--font-primary);
@@ -737,12 +737,22 @@ h1 {
     border-bottom: 1px solid var(--line);
     background: var(--paper);
     color: var(--ink);
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
     transform: translateY(-120%);
-    transition: transform 220ms ease;
+    transition:
+      transform 220ms ease,
+      opacity 160ms ease,
+      visibility 0s linear 220ms;
   }
 
   .mobile-menu.is-open {
+    visibility: visible;
+    opacity: 1;
+    pointer-events: auto;
     transform: translateY(0);
+    transition-delay: 0s;
   }
 
   .mobile-menu a {
