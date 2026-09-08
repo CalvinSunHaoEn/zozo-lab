@@ -7,4 +7,7 @@
 @media(max-width:900px){.hero-caption{height:175px;padding:24px 5%;grid-template-columns:1fr;gap:15px}.hero-images{height:calc(100% - 175px)}.hero-caption h1{font-size:2.1rem}.hero-caption .text-link{justify-self:start;font-size:.75rem}.hero-caption .eyebrow{font-size:.75rem}}
 @media(max-width:600px){.hero-caption{padding:20px;height:175px}.hero-caption h1{font-size:2rem}.hero-images{height:calc(100% - 175px)}}
 :root{--soft:#fff}.hero,.hero .crop,.product-card .visual,.gallery .crop,.campaign{background:#fff}.art-metal,.art-metalBlue,.art-headphones{filter:contrast(1.04) brightness(1.02)}
+.hero-solo{display:flex;align-items:center;justify-content:center;padding-inline:4%}.hero-solo>.crop{width:min(720px,52vw);height:100%;flex:0 0 auto}
+@media(max-width:900px){.hero-solo>.crop{width:min(640px,72vw)}}
+@media(max-width:600px){.hero-solo{padding-inline:20px}.hero-solo>.crop:first-child{display:block}.hero-solo>.crop:last-child{width:min(100%,480px);padding-bottom:0}}
 @media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
