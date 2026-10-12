@@ -22,3 +22,6 @@
 
 /* Waitlist entry points */
 .waitlist-cta{margin:20px 0 24px}.waitlist-cta .release-note{max-width:370px;font-size:.75rem;margin-top:12px}.design-link{margin-top:0}.detail-info .waitlist-cta .primary-link{max-width:none}.waitlist-cta a:focus-visible{outline-offset:4px}
+
+/* Preserve the supplied vector logo proportions at every breakpoint. */
+.logo img,.footer-logo img{width:100%;height:auto}
