@@ -13,3 +13,15 @@ summary::-webkit-details-marker{display:none}
 summary .disclosure-icon{position:absolute;right:0;top:50%;margin-top:-.5em;transition:transform .2s ease}
 details[open]>summary .disclosure-icon{transform:rotate(180deg)}
 @media(prefers-reduced-motion:reduce){summary .disclosure-icon{transition:none}}
+
+.footer-socials{margin:0 0 48px;padding-top:28px;border-top:1px solid var(--line)}
+.social-heading{font-size:.75rem;letter-spacing:.06em;margin:0 0 20px;color:#666}
+.social-links{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px 24px}
+.social-links a{display:flex;align-items:center;gap:12px;min-height:52px;width:fit-content;max-width:100%;border-radius:8px}
+.social-links .social-icon{width:24px;height:24px;flex:0 0 24px}
+.social-platform,.social-account{display:block;line-height:1.5}
+.social-platform{font-size:.9rem}
+.social-account{font-size:.8rem;color:#666;overflow-wrap:anywhere}
+.social-links a:hover .social-platform{text-decoration:underline;text-underline-offset:4px}
+@media(max-width:760px){.social-links{grid-template-columns:repeat(2,minmax(0,1fr));gap:16px 12px}}
+@media(max-width:359px){.social-links{grid-template-columns:1fr}}
