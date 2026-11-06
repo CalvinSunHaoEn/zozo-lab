@@ -65,4 +65,6 @@ At viewport widths up to 760px, the two featured cards use a vertical flex colum
 
 ## Mobile card consistency and icons
 
-All product-card groups, including Next Up, catalog and product-page recommendations, use full-width vertical flex columns at widths up to 760px. Checked at 320, 390 and 430px; tablet and desktop layouts retained at 768 and 1440px. UI symbols are rendered using locally vendored Lucide SVG icons under the ISC license (assets/icons/). icons.js converts dynamic control symbols to decorative SVG while preserving existing accessible labels. No emoji icons should be introduced.
+All product-card groups, including Next Up, catalog and product-page recommendations, use full-width vertical flex columns at widths up to 760px. Checked at 320, 390 and 430px; tablet and desktop layouts retained at 768 and 1440px. UI symbols are rendered using locally vendored Coolicons Line / Regular SVG icons under the MIT license (assets/icons/). icons.js converts dynamic control symbols to decorative SVG while preserving existing accessible labels. No emoji icons should be introduced.
+
+All authored UI icons now use locally served Coolicons, including mobile menu and disclosure chevrons. Brand logos remain original assets.

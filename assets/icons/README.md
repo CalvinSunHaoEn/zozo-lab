@@ -1,1 +1,1 @@
-Lucide SVG icons, ISC license. Upstream: https://github.com/lucide-icons/lucide . Pinned revision: 53fab88ff9d1b48f4704b5b5b560d6b4d560bf4c. Icons are served locally as an SVG sprite.
+Coolicons Line / Regular by Kryston Schwarze, MIT license. Official upstream: https://github.com/krystonschwarze/coolicons . Pinned revision: cb11f686c86e4f6bb33de2f8fb20022d8344eba4 . SVG geometry is unchanged and bundled into a local sprite. See LICENSE-coolicons.txt.

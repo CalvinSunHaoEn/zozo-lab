@@ -1,8 +1,15 @@
-/* Locally vendored Lucide icons; see assets/icons/LICENSE-lucide.txt. */
+/* Locally vendored Coolicons Line / Regular; see assets/icons/LICENSE-coolicons.txt. */
 (() => {
-  const names={'↗':'arrow-up-right','←':'arrow-left','→':'arrow-right','↑':'arrow-up','▷':'play','Ⅱ':'pause','✳':'sparkles','×':'x','+':'plus','−':'minus'};
+  const names={'↗':'arrow-up-right','←':'arrow-left','→':'arrow-right','↑':'arrow-up','▷':'play','Ⅱ':'pause','✳':'sparkles','×':'close','+':'plus','−':'minus'};
   const symbols=/[↗←→↑▷Ⅱ✳×+−]/;
+  function icon(name){
+    const svg=document.createElementNS('http://www.w3.org/2000/svg','svg');
+    svg.setAttribute('class','ui-icon');svg.setAttribute('viewBox','0 0 24 24');svg.setAttribute('aria-hidden','true');svg.setAttribute('focusable','false');svg.setAttribute('fill','none');
+    const use=document.createElementNS('http://www.w3.org/2000/svg','use');use.setAttribute('href','assets/icons/coolicons.svg#'+name);svg.append(use);return svg;
+  }
   function replaceSymbols(root){
+    if(root.querySelectorAll)for(const summary of root.querySelectorAll('summary'))if(!summary.querySelector('.disclosure-icon')){const svg=icon('chevron-down');svg.classList.add('disclosure-icon');summary.append(svg);}
+
     const walker=document.createTreeWalker(root,NodeFilter.SHOW_TEXT),nodes=[];
     while(walker.nextNode()){
       const node=walker.currentNode;
@@ -13,10 +20,7 @@
       for(const character of node.data){
         if(!names[character]){text+=character;continue;}
         if(text){fragment.append(document.createTextNode(text));text='';}
-        const svg=document.createElementNS('http://www.w3.org/2000/svg','svg');
-        svg.setAttribute('class','ui-icon');svg.setAttribute('viewBox','0 0 24 24');svg.setAttribute('aria-hidden','true');svg.setAttribute('focusable','false');
-        svg.setAttribute('fill','none');svg.setAttribute('stroke','currentColor');svg.setAttribute('stroke-width','2');svg.setAttribute('stroke-linecap','round');svg.setAttribute('stroke-linejoin','round');
-        const use=document.createElementNS('http://www.w3.org/2000/svg','use');use.setAttribute('href','assets/icons/lucide.svg#'+names[character]);svg.append(use);fragment.append(svg);
+        fragment.append(icon(names[character]));
       }
       if(text)fragment.append(document.createTextNode(text));node.replaceWith(fragment);
     }
