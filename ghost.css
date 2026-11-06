@@ -1,0 +1,22 @@
+.ghost-feature{display:grid;grid-template-columns:1fr 1fr;gap:7vw;align-items:center;padding:60px 7% 100px}
+.ghost-feature-image,.ghost-product-image{display:block;overflow:hidden;border-radius:28px;background:#e8e3de}
+img.art-ghost{display:block;max-width:100%;width:100%;height:auto;object-fit:contain}
+.ghost-feature-copy h2{font-size:clamp(2.5rem,4.4vw,5rem);line-height:1.04;letter-spacing:-.055em;margin:24px 0}
+.ghost-feature-copy h2 span{color:#8c8c84}
+.ghost-feature-copy>p:not(.eyebrow){max-width:380px;line-height:1.65;color:#666}
+.ghost-feature-copy .pill-link{margin-top:30px;max-width:340px}
+.ghost-card .visual img.art-ghost{width:100%;height:100%;object-fit:contain;transform:none!important;opacity:1!important}
+.ghost-card .visual{background:#e8e3de}
+.ghost-detail{align-items:start}
+.ghost-product-image img.art-ghost{width:100%;height:auto}
+.ghost-detail .ghost-lead{font-size:1.35rem;line-height:1.4;margin:0 0 20px}
+.ghost-detail .product-description{margin:0 0 28px}
+.ghost-detail .primary-link{max-width:none;border-radius:12px}
+.ghost-detail .field-label{margin-top:32px}
+.ghost-detail .outline-button{margin:20px 0 32px;width:100%}
+.ghost-notes{padding:60px 7% 100px;border-top:1px solid var(--line)}
+.ghost-notes>div{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:40px;margin-top:40px}
+.ghost-notes article>span{font-size:.8rem;color:#888}
+.ghost-notes h2{font-size:1.5rem;letter-spacing:-.035em}
+.ghost-notes article p{color:#666;line-height:1.6;max-width:320px}
+@media(max-width:760px){.ghost-feature{display:flex;flex-direction:column;padding:20px 5% 72px;gap:32px;align-items:stretch}.ghost-feature-image{border-radius:20px}.ghost-feature-copy h2{font-size:clamp(2.5rem,10vw,4.5rem)}.ghost-detail{padding-top:100px}.ghost-product-image{margin:0 5%;border-radius:20px}.ghost-detail .detail-info{padding:32px 5%}.ghost-notes{padding:40px 5% 70px}.ghost-notes>div{display:flex;flex-direction:column;gap:28px}.ghost-notes article{border-bottom:1px solid var(--line);padding-bottom:24px}}

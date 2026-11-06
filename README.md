@@ -70,3 +70,5 @@ All product-card groups, including Next Up, catalog and product-page recommendat
 All authored UI icons now use locally served Coolicons, including mobile menu and disclosure chevrons. Brand logos remain original assets.
 
 Official social accounts are linked in the footer using local Coolicons platform marks: Instagram, TikTok, X, Threads, Facebook and YouTube. Links open in a new tab with noopener/noreferrer and accessible platform labels. User-provided Framer Apple module is archived outside this repository under ../reference-icons/framer-apple; the link contains one icon, not the parent library.
+
+Mr. Ghost: user-approved AI-generated studio visualization (2026-11-06) is stored in assets/products/mr-ghost/studio-approved-v1.png. Home feature, Lighting catalog, product detail, search and saved edit include the lamp. No price or checkout URL was supplied: enquiries go to hello@zozo-lab.com. Phone-case waitlist remains specific to Cheese Cutout and Fluid Metal.
