@@ -1,0 +1,30 @@
+/* A white price bay carves a rounded, stepped notch from the image surface. */
+.product-card{--notch-radius:22px;--price-height:64px;--price-width:clamp(112px,31%,164px);container-type:inline-size}
+.product-card .visual>.crop{padding-top:68px}
+.card-topline{inset:7px 7px auto;display:block;height:var(--price-height);font-size:.7rem}
+.card-badge{position:absolute;left:13px;top:15px;white-space:nowrap}
+.card-price{position:absolute;right:0;top:0;display:flex;align-items:center;justify-content:center;gap:5px;min-width:0;width:var(--price-width);height:var(--price-height);padding:0 8px 8px 14px;margin:0;background:#fff;border-bottom-left-radius:var(--notch-radius);font-size:1.5rem;line-height:1;isolation:isolate}
+.card-price::before,.card-price::after{content:'';position:absolute;width:var(--notch-radius);height:var(--notch-radius);background:radial-gradient(circle at 0 100%,transparent 70%,#fff 71%);pointer-events:none}
+.card-price::before{right:100%;top:0}
+.card-price::after{right:0;top:100%}
+.price-currency{font-size:.61rem;font-weight:500;letter-spacing:.02em;align-self:center;padding-top:3px}
+.price-amount{font-size:1.5rem;font-weight:650;letter-spacing:-.045em;font-variant-numeric:tabular-nums;white-space:nowrap}
+.price-pending{font-size:.79rem;font-weight:500;line-height:1.25;text-align:right}
+@container(max-width:250px){.card-topline .card-badge{top:calc(var(--price-height) + 10px);left:9px;font-size:.56rem}.product-card .visual>.crop{padding-top:96px}.price-amount{font-size:1.12rem}.price-currency{font-size:.5rem}.price-pending{font-size:.7rem}}
+@media(max-width:1100px){.product-card{--price-width:112px;--price-height:58px;--notch-radius:19px}.price-amount{font-size:1.35rem}.card-badge{font-size:.6rem;left:10px;top:12px}.price-currency{font-size:.56rem}}
+@media(max-width:760px){.product-card{--price-width:96px;--price-height:48px;--notch-radius:16px}.card-topline{inset:5px 5px auto;display:block}.card-price{padding:0 6px 5px 10px;margin:0;gap:3px;font-size:1.1rem}.price-amount{font-size:1.1rem;font-weight:650;letter-spacing:-.05em}.price-currency{font-size:.47rem;padding-top:2px}.price-pending{font-size:.67rem;line-height:1.2}.card-badge{left:8px;top:60px;font-size:.53rem;padding:6px 7px}.product-card .visual>.crop{padding-top:83px}}
+
+/* The two featured designs need room to read on a phone, rather than two miniature cards. */
+@media(max-width:760px){
+  .featured-grid{display:flex;flex-direction:column;gap:24px;align-items:stretch}
+  .featured-grid>.product-card{width:100%;min-width:0;--price-width:134px;--price-height:60px;--notch-radius:20px}
+  .featured-grid .visual{aspect-ratio:1/1.05}
+  .featured-grid .visual>.crop{padding:64px 22px 20px}
+  .featured-grid .card-badge{top:14px;left:12px;font-size:.65rem;padding:7px 10px}
+  .featured-grid .price-amount{font-size:1.5rem}
+  .featured-grid .price-currency{font-size:.6rem}
+  .featured-grid .card-series{font-size:.65rem;padding-inline:12px;margin-top:16px}
+  .featured-grid .metadata{font-size:1.05rem;padding-inline:12px;gap:7px}
+  .featured-grid .metadata>span{font-size:.75rem}
+  .featured-grid .save-small{font-size:.75rem;min-height:44px;margin:4px 12px 5px}
+}

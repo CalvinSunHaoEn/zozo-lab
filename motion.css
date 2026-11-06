@@ -1,0 +1,33 @@
+:root{--motion-ease:cubic-bezier(.2,.7,.1,1)}
+html{scroll-behavior:smooth;scroll-padding-top:90px}
+/* Viewport reveals are enabled only after JS has attached the observer. */
+.reveal-target{transition:opacity .85s var(--motion-ease),translate .95s var(--motion-ease),filter .85s var(--motion-ease);transition-delay:var(--reveal-delay,0ms)}
+.reveal-target:not(.is-visible){opacity:0;translate:0 28px;filter:blur(3px)}
+.reveal-target.is-visible{opacity:1;translate:0 0;filter:blur(0)}
+.reveal-target[data-reveal=image]:not(.is-visible){translate:0 38px;clip-path:inset(5% 3% 0 round 24px)}
+.reveal-target[data-reveal=image]{transition:opacity .95s var(--motion-ease),translate 1.1s var(--motion-ease),clip-path 1.1s var(--motion-ease);clip-path:inset(0 round 24px)}
+.reveal-target[data-reveal=words]{opacity:1;filter:none;translate:none}
+.motion-word-mask{display:inline-block;overflow:hidden;vertical-align:bottom;padding-bottom:.13em;margin-bottom:-.13em;color:inherit!important}
+.motion-word{display:inline-block;color:inherit!important;transition:transform 1s var(--motion-ease),opacity .8s var(--motion-ease);transition-delay:calc(var(--reveal-delay,0ms) + var(--word-delay,0ms));transform:translateY(0);opacity:1}
+.reveal-target:not(.is-visible) .motion-word{transform:translateY(112%) rotate(2deg);opacity:0}
+.manifesto{padding:125px 24px 105px;overflow:hidden}
+.manifesto .capsule-sentence{max-width:1060px;margin:0 auto;font-size:clamp(30px,4.25vw,64px);line-height:1.16;letter-spacing:-.045em;text-wrap:balance}
+.manifesto .capsule-sentence .sentence-word{color:color-mix(in srgb,var(--ink) calc(var(--word-ink,1)*100%),#a1a59d);transition:color .18s linear}
+.manifesto .capsule-sentence .media-capsule{display:inline-block;height:.88em;width:2.1em;vertical-align:-.08em;margin:0 .045em;border-radius:999px;overflow:hidden;position:relative;background:#e4e1d8;isolation:isolate;transition:width 1.1s var(--motion-ease),opacity .8s var(--motion-ease);transition-delay:var(--capsule-delay,0ms)}
+.manifesto .capsule-sentence:not(.is-visible) .media-capsule{width:.28em;opacity:0}
+.media-capsule img{width:100%;height:100%;object-fit:cover;max-width:none;display:block;transition:transform 1.3s var(--motion-ease);transform:scale(1.04)}
+.media-capsule:hover img{transform:scale(1.15)}
+.media-capsule.capsule-metal{background:#d9ded9}.media-capsule.capsule-cheese{background:#ecd78b}
+.media-capsule.capsule-metal img{object-position:center;mix-blend-mode:normal}
+.media-capsule.capsule-cheese img{object-position:center;mix-blend-mode:normal}
+.media-capsule.capsule-life img{object-position:50% 55%}
+.manifesto>a{margin-top:30px}
+.stage-word{will-change:transform,opacity}.stage-product .crop{will-change:transform,opacity;transform-origin:50% 55%}
+.showcase-bottom{position:relative}.showcase-actions .pill-link span,.collection-tile .tile-caption>span,.pill-link>span{transition:transform .35s var(--motion-ease)}
+.pill-link:hover>span,.collection-tile:hover .tile-caption>span{transform:translate(3px,-3px)}
+.design-tabs button{position:relative;transition:background .35s var(--motion-ease),color .35s var(--motion-ease),box-shadow .35s var(--motion-ease)}
+.design-tabs button[aria-selected=true]{box-shadow:0 2px 8px #0000000a}
+.gallery-stage .crop{animation:gallery-view-in .6s var(--motion-ease) both}
+@keyframes gallery-view-in{from{opacity:0;translate:0 12px}to{opacity:1;translate:0 0}}
+@media(max-width:760px){.manifesto{padding:85px 22px 65px}.manifesto .capsule-sentence{font-size:clamp(29px,7.2vw,42px);line-height:1.2;letter-spacing:-.04em}.manifesto .capsule-sentence .media-capsule{width:1.9em;height:.85em}.manifesto .capsule-sentence:not(.is-visible) .media-capsule{width:.28em}.manifesto>a{margin-top:25px}.reveal-target:not(.is-visible){translate:0 20px}.motion-word-mask{max-width:100%}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.reveal-target,.reveal-target:not(.is-visible){opacity:1!important;translate:none!important;filter:none!important;clip-path:none!important}.motion-word{transform:none!important;opacity:1!important}.manifesto .capsule-sentence .sentence-word{color:var(--ink)}.manifesto .capsule-sentence:not(.is-visible) .media-capsule{width:2.1em;opacity:1}.stage-word,.stage-product .crop{will-change:auto}}
