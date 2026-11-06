@@ -62,3 +62,7 @@ Vector contours now cover all 18 product views. Coming-soon frosting is clipped 
 ## Featured mobile layout
 
 At viewport widths up to 760px, the two featured cards use a vertical flex column with full-width cards and 24px spacing. Above 760px the desktop two-column grid is retained. This scoped adjustment follows the content-led breakpoints and flexible layout guidance in MDN Responsive Design and web.dev Responsive Web Design Basics. Verified at 320, 390, 600, 760, 768 and 1440px with no horizontal overflow.
+
+## Mobile card consistency and icons
+
+All product-card groups, including Next Up, catalog and product-page recommendations, use full-width vertical flex columns at widths up to 760px. Checked at 320, 390 and 430px; tablet and desktop layouts retained at 768 and 1440px. UI symbols are rendered using locally vendored Lucide SVG icons under the ISC license (assets/icons/). icons.js converts dynamic control symbols to decorative SVG while preserving existing accessible labels. No emoji icons should be introduced.

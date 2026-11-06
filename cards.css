@@ -14,17 +14,17 @@
 @media(max-width:1100px){.product-card{--price-width:112px;--price-height:58px;--notch-radius:19px}.price-amount{font-size:1.35rem}.card-badge{font-size:.6rem;left:10px;top:12px}.price-currency{font-size:.56rem}}
 @media(max-width:760px){.product-card{--price-width:96px;--price-height:48px;--notch-radius:16px}.card-topline{inset:5px 5px auto;display:block}.card-price{padding:0 6px 5px 10px;margin:0;gap:3px;font-size:1.1rem}.price-amount{font-size:1.1rem;font-weight:650;letter-spacing:-.05em}.price-currency{font-size:.47rem;padding-top:2px}.price-pending{font-size:.67rem;line-height:1.2}.card-badge{left:8px;top:60px;font-size:.53rem;padding:6px 7px}.product-card .visual>.crop{padding-top:83px}}
 
-/* The two featured designs need room to read on a phone, rather than two miniature cards. */
+/* All product-card groups stack consistently on phones, including recommendations. */
 @media(max-width:760px){
-  .featured-grid{display:flex;flex-direction:column;gap:24px;align-items:stretch}
-  .featured-grid>.product-card{width:100%;min-width:0;--price-width:134px;--price-height:60px;--notch-radius:20px}
-  .featured-grid .visual{aspect-ratio:1/1.05}
-  .featured-grid .visual>.crop{padding:64px 22px 20px}
-  .featured-grid .card-badge{top:14px;left:12px;font-size:.65rem;padding:7px 10px}
-  .featured-grid .price-amount{font-size:1.5rem}
-  .featured-grid .price-currency{font-size:.6rem}
-  .featured-grid .card-series{font-size:.65rem;padding-inline:12px;margin-top:16px}
-  .featured-grid .metadata{font-size:1.05rem;padding-inline:12px;gap:7px}
-  .featured-grid .metadata>span{font-size:.75rem}
-  .featured-grid .save-small{font-size:.75rem;min-height:44px;margin:4px 12px 5px}
+  :is(.featured-grid,.upcoming-section .product-grid,.listing .product-grid,.related .product-grid){display:flex;flex-direction:column;gap:24px;align-items:stretch}
+  :is(.featured-grid,.upcoming-section .product-grid,.listing .product-grid,.related .product-grid)>.product-card{width:100%;min-width:0;--price-width:134px;--price-height:60px;--notch-radius:20px}
+  :is(.featured-grid,.upcoming-section .product-grid,.listing .product-grid,.related .product-grid) .visual{aspect-ratio:1/1.05}
+  :is(.featured-grid,.upcoming-section .product-grid,.listing .product-grid,.related .product-grid) .visual>.crop{padding:64px 22px 20px}
+  :is(.featured-grid,.upcoming-section .product-grid,.listing .product-grid,.related .product-grid) .card-badge{top:14px;left:12px;font-size:.65rem;padding:7px 10px}
+  :is(.featured-grid,.upcoming-section .product-grid,.listing .product-grid,.related .product-grid) .price-amount{font-size:1.5rem}
+  :is(.featured-grid,.upcoming-section .product-grid,.listing .product-grid,.related .product-grid) .price-currency{font-size:.6rem}
+  :is(.featured-grid,.upcoming-section .product-grid,.listing .product-grid,.related .product-grid) .card-series{font-size:.65rem;padding-inline:12px;margin-top:16px}
+  :is(.featured-grid,.upcoming-section .product-grid,.listing .product-grid,.related .product-grid) .metadata{font-size:1.05rem;padding-inline:12px;gap:7px}
+  :is(.featured-grid,.upcoming-section .product-grid,.listing .product-grid,.related .product-grid) .metadata>span{font-size:.75rem}
+  :is(.featured-grid,.upcoming-section .product-grid,.listing .product-grid,.related .product-grid) .save-small{font-size:.75rem;min-height:44px;margin:4px 12px 5px}
 }

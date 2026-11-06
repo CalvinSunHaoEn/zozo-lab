@@ -1,0 +1,6 @@
+.ui-icon{display:inline-block;width:1em;height:1em;flex:0 0 1em;vertical-align:-.15em;overflow:visible;pointer-events:none}
+.text-link,.manifesto>a,.back{display:inline-flex;align-items:center;gap:.4em}
+.slide-controls button{display:inline-flex;align-items:center;justify-content:center}
+.pill-link .ui-icon,.primary-link .ui-icon{width:1.15em;height:1.15em}
+.brand-strip .ui-icon{vertical-align:middle}
+.metadata>span{display:inline-flex;align-items:center;gap:.3em}
