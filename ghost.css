@@ -20,3 +20,7 @@ img.art-ghost{display:block;max-width:100%;width:100%;height:auto;object-fit:con
 .ghost-notes h2{font-size:1.5rem;letter-spacing:-.035em}
 .ghost-notes article p{color:#666;line-height:1.6;max-width:320px}
 @media(max-width:760px){.ghost-feature{display:flex;flex-direction:column;padding:20px 5% 72px;gap:32px;align-items:stretch}.ghost-feature-image{border-radius:20px}.ghost-feature-copy h2{font-size:clamp(2.5rem,10vw,4.5rem)}.ghost-detail{padding-top:100px}.ghost-product-image{margin:0 5%;border-radius:20px}.ghost-detail .detail-info{padding:32px 5%}.ghost-notes{padding:40px 5% 70px}.ghost-notes>div{display:flex;flex-direction:column;gap:28px}.ghost-notes article{border-bottom:1px solid var(--line);padding-bottom:24px}}
+
+/* Studio photography fills the card image surface without an inset frame. */
+.product-card.ghost-card .visual>img.art-ghost{padding:0;width:100%;height:100%;object-fit:cover;object-position:center;transform:none!important}
+.product-card.ghost-card .visual{aspect-ratio:1085/1449}
