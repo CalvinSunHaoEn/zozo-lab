@@ -50,3 +50,13 @@ img.art-ghost{display:block;max-width:100%;width:100%;height:auto;object-fit:con
   .ghost-scenes,.ghost-material,.ghost-specs{grid-template-columns:minmax(0,1fr)}
   .ghost-story,.ghost-material,.ghost-specs{padding:48px 5%}
 }
+
+.showcase[data-tone=ghost]{background:#eee9de}
+.showcase[data-tone=ghost] .stage-product{transform:none}
+.showcase[data-tone=ghost] .stage-product:hover{transform:translateY(-6px)}
+.stage-product .hero-ghost-art{display:block;object-fit:contain}
+.ghost-feature-image:has(.ghost-feature-cutout){background:#eee9de;aspect-ratio:3/4}
+.ghost-feature-cutout{display:block;width:100%;height:100%;object-fit:contain;padding:5%}
+@media(max-width:420px){
+  .showcase-top .design-tabs button{padding-inline:8px;font-size:.76rem}
+}

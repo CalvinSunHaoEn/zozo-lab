@@ -1,14 +1,15 @@
 /* Product presentation, authored for ZOZO Lab. No Framer runtime required. */
 const showcaseDesigns = [
   { id: 'cheese-cutout', label: 'Cheese Cutout', word: 'CHEESE', tone: 'cheese', color: 'Cheese Yellow', line: 'A little less ordinary.', note: 'Playful openings. Unmistakable yellow. An everyday object with a personality of its own.' },
-  { id: 'fluid-metal', label: 'Fluid Metal', word: 'FLUID', tone: 'metal', color: 'Silver / White', line: 'Go with your own flow.', note: 'Organic contours. A metallic finish. A small piece of sculpture, made to go with you.' }
+  { id: 'fluid-metal', label: 'Fluid Metal', word: 'FLUID', tone: 'metal', color: 'Silver / White', line: 'Go with your own flow.', note: 'Organic contours. A metallic finish. A small piece of sculpture, made to go with you.' },
+  { id: 'mr-ghost', label: 'Mr. Ghost', word: 'GHOST', tone: 'ghost', color: 'Opal White / Yellow', image: ghostHeroImage, note: 'A little office attitude. A softer side after hours. Meet your desk companion.' }
 ];
 let showcaseUserPlay = false;
 let showcaseIndex = 0, showcaseView = 0, showcaseTimer, showcasePlaying = false;
 
 function showcaseHome() {
   return `<section class="showcase" aria-label="Featured designs" aria-roledescription="carousel">
-    <div class="showcase-top"><div class="design-tabs" role="tablist" aria-label="Featured designs">${showcaseDesigns.map((d,i)=>`<button id="design-tab-${i}" role="tab" data-design="${i}" aria-controls="design-panel" aria-selected="${i===showcaseIndex}" tabindex="${i===showcaseIndex?0:-1}">${d.label}</button>`).join('')}</div><div class="slide-controls"><button data-showcase="previous" aria-label="Previous design">←</button><span class="slide-count">01 / 02</span><button data-showcase="next" aria-label="Next design">→</button></div></div>
+    <div class="showcase-top"><div class="design-tabs" role="tablist" aria-label="Featured designs">${showcaseDesigns.map((d,i)=>`<button id="design-tab-${i}" role="tab" data-design="${i}" aria-controls="design-panel" aria-selected="${i===showcaseIndex}" tabindex="${i===showcaseIndex?0:-1}">${d.label}</button>`).join('')}</div><div class="slide-controls"><button data-showcase="previous" aria-label="Previous design">←</button><span class="slide-count">01 / ${String(showcaseDesigns.length).padStart(2,'0')}</span><button data-showcase="next" aria-label="Next design">→</button></div></div>
     <div id="design-panel" role="tabpanel" aria-labelledby="design-tab-${showcaseIndex}"></div>
   </section>
   <section class="manifesto" aria-label="Everyday objects, individual expression"><p class="capsule-sentence"><span class="sentence-copy">Bring a little </span><span class="media-capsule capsule-life" aria-hidden="true"><img src="assets/editorial/cheese-city-natural-grip-v6.webp" alt="" width="1200" height="400" loading="lazy"></span><span class="sentence-copy"> personality to the everyday, with </span><span class="media-capsule capsule-metal" style="--capsule-delay:150ms" aria-hidden="true"><img src="assets/editorial/stone-liquid-metal-v1.webp" alt="" width="1000" height="333" loading="lazy"></span><span class="sentence-copy"> sculptural forms and </span><span class="media-capsule capsule-cheese" style="--capsule-delay:300ms" aria-hidden="true"><img src="assets/editorial/molten-cheese-v1.webp" alt="" width="1000" height="333" loading="lazy"></span><span class="sentence-copy"> playful details. Make it your own.</span></p></section>
@@ -32,12 +33,30 @@ function renderShowcasePanel() {
   document.querySelector('.showcase').dataset.tone = d.tone;
   document.querySelectorAll('[data-design]').forEach((b,i)=>{b.setAttribute('aria-selected',String(i===showcaseIndex));b.tabIndex=i===showcaseIndex?0:-1;});
   panel.setAttribute('aria-labelledby',`design-tab-${showcaseIndex}`);
-  panel.innerHTML = `<div class="product-stage"><span class="stage-word" aria-hidden="true">${d.word}</span><a href="#/product/${p.id}" class="stage-product view-${showcaseView}" aria-label="Explore ${p.name}">${crop(p.images[showcaseView],p.name+' — '+views[showcaseView]+' view')}</a></div><div class="showcase-bottom"><div class="showcase-description"><h1><a href="#/product/${p.id}">${p.name}.</a></h1><p>${d.note}</p></div><div class="showcase-views"><div class="view-options" role="group" aria-label="Product view">${views.map((v,i)=>`<button data-hero-view="${i}" aria-pressed="${i===showcaseView}" aria-label="${v} view">${v}</button>`).join('')}</div><p>${d.color} <a href="#/product/${p.id}">Full details ↗</a></p></div><div class="showcase-actions"><a class="pill-link dark" href="${waitlistUrl}" target="_blank" rel="noopener noreferrer">Join the waitlist <span>↗</span></a><small>${money(p.price)} · Design preview</small></div></div>`;
+  const productUrl = `#/product/${p.id}`;
+  const image = d.image
+    ? `<img class="crop hero-ghost-art" src="${d.image}" alt="Mr. Ghost with a softly glowing shade and yellow shoes">`
+    : crop(p.images[showcaseView], p.name + ' — ' + views[showcaseView] + ' view');
+  const viewOptions = d.image ? '' : `<div class="view-options" role="group" aria-label="Product view">
+    ${views.map((view, index) => `<button data-hero-view="${index}" aria-pressed="${index === showcaseView}" aria-label="${view} view">${view}</button>`).join('')}
+  </div>`;
+  const action = d.image
+    ? `<a class="pill-link dark" href="${productUrl}">Explore Mr. Ghost <span>↗</span></a><small>Contact for pricing</small>`
+    : `<a class="pill-link dark" href="${waitlistUrl}" target="_blank" rel="noopener noreferrer">Join the waitlist <span>↗</span></a><small>${money(p.price)} · Design preview</small>`;
+  panel.innerHTML = `<div class="product-stage">
+    <span class="stage-word" aria-hidden="true">${d.word}</span>
+    <a href="${productUrl}" class="stage-product view-${showcaseView}" aria-label="Explore ${p.name}">${image}</a>
+  </div>
+  <div class="showcase-bottom">
+    <div class="showcase-description"><h1><a href="${productUrl}">${p.name}.</a></h1><p>${d.note}</p></div>
+    <div class="showcase-views">${viewOptions}<p>${d.color} ${d.image ? '' : `<a href="${productUrl}">Full details ↗</a>`}</p></div>
+    <div class="showcase-actions">${action}</div>
+  </div>`;
   syncShowcaseControls();
 }
 function syncShowcaseControls(){
   if(!document.querySelector('.slide-count'))return;
-  document.querySelector('.slide-count').textContent=`${String(showcaseIndex+1).padStart(2,'0')} / 02`;
+  document.querySelector('.slide-count').textContent=`${String(showcaseIndex+1).padStart(2,'0')} / ${String(showcaseDesigns.length).padStart(2,'0')}`;
   const pause=document.querySelector('[data-showcase="pause"]');
   if(pause){pause.textContent=showcasePlaying?'Ⅱ':'▷';pause.setAttribute('aria-label',`${showcasePlaying?'Pause':'Play'} product slideshow`);}
 }
@@ -75,7 +94,14 @@ async function paintShowcase({animate=false,direction=1,viewOnly=false,enter=fal
 function initShowcase(){
   stopShowcase();
   if(!document.querySelector('#design-panel'))return;
-  for(const d of showcaseDesigns){const p=products.find(p=>p.id===d.id);for(const key of p.images){const img=new Image();img.src='assets/'+art[key][0];}}
+  for (const design of showcaseDesigns) {
+    const product = products.find(item => item.id === design.id);
+    const sources = design.image ? [design.image] : product.images.map(key => 'assets/' + art[key][0]);
+    for (const source of sources) {
+      const image = new Image();
+      image.src = source;
+    }
+  }
   paintShowcase({enter:true});
   scheduleShowcaseRotation();
 }
