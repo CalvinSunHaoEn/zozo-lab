@@ -21,3 +21,8 @@ button,.pill-link,.primary-link,.outline-button{border-radius:var(--action-radiu
  .slide-controls{gap:6px}
  .showcase-top{gap:10px}
 }
+
+/* Keep the product selector centered independently of desktop next/previous controls. */
+.showcase-top{display:flex;justify-content:center;position:relative}
+.showcase-top .design-tabs{justify-self:center}
+.showcase-top .slide-controls{position:absolute;right:0}

@@ -4,11 +4,11 @@ const showcaseDesigns = [
   { id: 'fluid-metal', label: 'Fluid Metal', word: 'FLUID', tone: 'metal', color: 'Silver / White', line: 'Go with your own flow.', note: 'Organic contours. A metallic finish. A small piece of sculpture, made to go with you.' }
 ];
 let showcaseUserPlay = false;
-let showcaseIndex = 0, showcaseView = 0, showcaseTimer, showcasePlaying = !matchMedia('(prefers-reduced-motion: reduce)').matches;
+let showcaseIndex = 0, showcaseView = 0, showcaseTimer, showcasePlaying = false;
 
 function showcaseHome() {
   return `<section class="showcase" aria-label="Featured designs" aria-roledescription="carousel">
-    <div class="showcase-top"><div class="design-tabs" role="tablist" aria-label="Featured designs">${showcaseDesigns.map((d,i)=>`<button id="design-tab-${i}" role="tab" data-design="${i}" aria-controls="design-panel" aria-selected="${i===showcaseIndex}" tabindex="${i===showcaseIndex?0:-1}">${d.label}</button>`).join('')}</div><div class="slide-controls"><button data-showcase="pause" aria-label="${showcasePlaying?'Pause':'Play'} product slideshow">${showcasePlaying?'Ⅱ':'▷'}</button><button data-showcase="previous" aria-label="Previous design">←</button><span class="slide-count">01 / 02</span><button data-showcase="next" aria-label="Next design">→</button></div></div>
+    <div class="showcase-top"><div class="design-tabs" role="tablist" aria-label="Featured designs">${showcaseDesigns.map((d,i)=>`<button id="design-tab-${i}" role="tab" data-design="${i}" aria-controls="design-panel" aria-selected="${i===showcaseIndex}" tabindex="${i===showcaseIndex?0:-1}">${d.label}</button>`).join('')}</div><div class="slide-controls"><button data-showcase="previous" aria-label="Previous design">←</button><span class="slide-count">01 / 02</span><button data-showcase="next" aria-label="Next design">→</button></div></div>
     <div id="design-panel" role="tabpanel" aria-labelledby="design-tab-${showcaseIndex}"></div>
   </section>
   <section class="manifesto" aria-label="Everyday objects, individual expression"><p class="capsule-sentence"><span class="sentence-copy">Bring a little </span><span class="media-capsule capsule-life" aria-hidden="true"><img src="assets/editorial/cheese-city-natural-grip-v6.webp" alt="" width="1200" height="400" loading="lazy"></span><span class="sentence-copy"> personality to the everyday, with </span><span class="media-capsule capsule-metal" style="--capsule-delay:150ms" aria-hidden="true"><img src="assets/editorial/stone-liquid-metal-v1.webp" alt="" width="1000" height="333" loading="lazy"></span><span class="sentence-copy"> sculptural forms and </span><span class="media-capsule capsule-cheese" style="--capsule-delay:300ms" aria-hidden="true"><img src="assets/editorial/molten-cheese-v1.webp" alt="" width="1000" height="333" loading="lazy"></span><span class="sentence-copy"> playful details. Make it your own.</span></p></section>
@@ -39,8 +39,7 @@ function syncShowcaseControls(){
   if(!document.querySelector('.slide-count'))return;
   document.querySelector('.slide-count').textContent=`${String(showcaseIndex+1).padStart(2,'0')} / 02`;
   const pause=document.querySelector('[data-showcase="pause"]');
-  pause.textContent=showcasePlaying?'Ⅱ':'▷';
-  pause.setAttribute('aria-label',`${showcasePlaying?'Pause':'Play'} product slideshow`);
+  if(pause){pause.textContent=showcasePlaying?'Ⅱ':'▷';pause.setAttribute('aria-label',`${showcasePlaying?'Pause':'Play'} product slideshow`);}
 }
 let showcaseRevision=0,showcaseAnimations=[];
 function stopShowcase(){clearInterval(showcaseTimer);showcaseRevision++;showcaseAnimations.forEach(a=>a.cancel());showcaseAnimations=[];}
