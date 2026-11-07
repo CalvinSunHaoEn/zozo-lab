@@ -28,3 +28,15 @@
   :is(.featured-grid,.upcoming-section .product-grid,.listing .product-grid,.related .product-grid) .metadata>span{font-size:.75rem}
   :is(.featured-grid,.upcoming-section .product-grid,.listing .product-grid,.related .product-grid) .save-small{font-size:.75rem;min-height:44px;margin:4px 12px 5px}
 }
+
+/* Home: one product card, one destination; secondary actions live on details. */
+.home-product-card{display:block;text-decoration:none;color:inherit}
+.home-product-card .visual{display:block}
+.home-product-card .metadata{margin:16px 0 14px}
+.home-product-card .metadata h3{margin:0}
+.home-product-card:focus-visible{outline:2px solid var(--ink);outline-offset:5px}
+.showcase-top .design-tabs{grid-column:2}
+.showcase-top .slide-controls{grid-column:3}
+.showcase-actions{grid-template-columns:1fr}
+.manifesto{padding-block:80px 60px}
+@media(max-width:760px){.showcase-top .design-tabs{grid-column:1}.showcase-top .slide-controls{grid-column:2}.showcase-actions{grid-template-columns:1fr}.manifesto{padding:60px 20px 40px}.home-product-card .metadata{margin-block:16px 14px}.home-product-card .metadata h3{font-size:1.05rem}}
