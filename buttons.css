@@ -1,0 +1,23 @@
+/* Shared action geometry: pill actions and circular icon controls. */
+:root{--action-radius:9999px;--action-height:48px;--compact-action-height:44px}
+button,.pill-link,.primary-link,.outline-button{border-radius:var(--action-radius)!important}
+.pill-link,.primary-link,.detail-info .outline-button,.filter-form .outline-button{
+ min-height:var(--action-height);padding:11px 24px;line-height:1.5;align-items:center
+}
+.slide-controls button{width:var(--compact-action-height);height:var(--compact-action-height);min-height:var(--compact-action-height);padding:0;flex:0 0 var(--compact-action-height);border-radius:50%!important}
+.design-tabs{border-radius:var(--action-radius);padding:4px}
+.design-tabs button,.view-options button,.detail-info .variant-list button{min-height:var(--compact-action-height);padding:8px 16px;line-height:1.5}
+.tool-actions button,.product-card .save-small,#close-drawer,.active-filter button{
+ min-height:var(--compact-action-height);padding:9px 16px;border:1px solid var(--line);text-decoration:none;line-height:1.5
+}
+.header-right button{min-height:var(--compact-action-height)}
+.menu-icon{border-radius:50%!important}
+.gallery-thumbnails button{border-radius:var(--action-radius)!important}
+.filter-form select{border-radius:var(--action-radius);padding:12px 18px;min-height:var(--action-height)}
+@media(max-width:760px){
+ .pill-link,.primary-link,.detail-info .outline-button{min-height:var(--action-height);padding:11px 20px}
+ .design-tabs button{padding:8px 14px}
+ .view-options button{padding:8px 14px}
+ .slide-controls{gap:6px}
+ .showcase-top{gap:10px}
+}

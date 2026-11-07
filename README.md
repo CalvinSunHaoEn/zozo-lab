@@ -76,3 +76,5 @@ Mr. Ghost: user-approved AI-generated studio visualization (2026-11-06) is store
 Home simplification (2026-11-06): removed A little more ZOZO, hero edge captions/ruler, decorative section eyebrows and brand strip. Home product cards are single semantic links without Save or duplicate Explore actions; cart controls remain on product details. Verified 320/390/1440px widths, no horizontal overflow, and navigation by tapping card metadata.
 
 Mobile typography: 14px minimum for labels, metadata and secondary copy; 16px for body copy and primary actions. Scoped to max-width 760px. Audited computed visible text on home, catalog, phone-case and Mr. Ghost detail pages plus Cart; no text below 14px and no horizontal overflow at 320/390px.
+
+Button geometry: shared pill radius across authored buttons and CTA links; primary actions 48px high, compact switches and circular icon controls 44px. Verified home and Mr. Ghost detail at 320/390px and desktop 1440px without horizontal overflow.
