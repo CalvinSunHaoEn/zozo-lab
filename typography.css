@@ -1,0 +1,42 @@
+/* Mobile reading scale: 14px labels, 16px body and primary actions. */
+@media(max-width:760px){
+ body{font-size:1rem}
+ .header-right,.header-right span,.design-tabs button,.slide-controls,.view-options button,.showcase-views p,
+ .eyebrow,.field-label,.card-topline,.card-badge,.price-currency,.price-pending,
+ .product-card .card-series,.product-card .metadata>span,.product-card .save-small,
+ .showcase-actions small,.release-note,.gallery-counter,.gallery-hint,.gallery-thumbnails button span,
+ .category-tabs,.tool-actions,.active-filter,.listing-top>p,.section-title,.related .section-title,
+ .social-heading,.social-account,.footer-links nav,.footer-links nav p,.footer-bottom,
+ .story-closeup>span,.story-notes article>span,.ghost-notes article>span,.mini-product small{font-size:.875rem;line-height:1.5}
+ .showcase-description h1{font-size:1.125rem;line-height:1.35}
+ .showcase-description p,.section-heading>p:last-child,.story-heading>p:last-child,
+ .tile-caption p,.story-notes p,.launch-invite>p:not(.eyebrow),.buying-guide details p,
+ .buying-guide summary,.detail-info details p,.detail-info summary,.purchase-status,
+ .device-note,.product-description,.drawer-description,.empty p,.social-platform,
+ .pill-link,.primary-link,.outline-button,.text-link,.back,.variant-list button,
+ .gallery-thumbnails button,.filter-form,.footer-top p{font-size:1rem;line-height:1.5}
+ .product-card .metadata,.home-product-card .metadata h3{font-size:1.125rem;line-height:1.4}
+ .price-amount{font-size:1.5rem}
+ .card-topline .card-badge{font-size:.875rem;line-height:1.4}
+ .card-topline .price-currency{font-size:.875rem}
+ .card-topline .price-pending{font-size:.875rem}
+ .view-options button,.design-tabs button,.tool-actions button,.header-right button{min-height:44px}
+ .design-tabs button{padding-inline:14px}
+ .showcase-views{flex-wrap:wrap;align-items:center;gap:12px}
+ .showcase-views p{white-space:normal}
+ .category-tabs{flex-wrap:wrap;white-space:normal;gap:12px 20px;overflow:visible}
+ .tool-actions{gap:20px;flex-wrap:wrap}
+ .footer-bottom{gap:16px;align-items:flex-start}
+ .footer-bottom span{white-space:normal}
+ .social-links{gap:18px 12px}
+ .gallery-thumbnails button{height:auto;min-height:110px}
+}
+@media(max-width:760px){
+ .product-card .card-topline .card-badge,.product-card .card-topline .price-currency,
+ .product-card .card-topline .price-pending,.home-product-card.product-card .metadata>span,
+ .waitlist-cta .release-note{font-size:.875rem;line-height:1.5}
+}
+@media(max-width:760px){
+ .eyebrow,.field-label,.release-note,.product-card .card-series,.product-card .metadata>span,.product-card .save-small{font-size:.875rem!important;line-height:1.5}
+ .back,.text-link,.variant-list button{font-size:1rem!important;line-height:1.5}
+}
