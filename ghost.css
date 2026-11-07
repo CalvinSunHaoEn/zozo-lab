@@ -24,3 +24,29 @@ img.art-ghost{display:block;max-width:100%;width:100%;height:auto;object-fit:con
 /* Studio photography fills the card image surface without an inset frame. */
 .product-card.ghost-card .visual>img.art-ghost{padding:0;width:100%;height:100%;object-fit:cover;object-position:center;transform:none!important}
 .product-card.ghost-card .visual{aspect-ratio:1085/1449}
+
+/* Mr. Ghost product detail gallery and editorial sections. */
+.ghost-gallery{min-width:0}
+.ghost-product-image>img{display:block;width:100%;aspect-ratio:3/4;object-fit:cover}
+.ghost-thumbnails{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:12px}
+.ghost-thumbnails button{display:grid;gap:7px;padding:0 0 9px;overflow:hidden;background:#eeeee8;border:1px solid transparent;border-radius:12px!important;font:inherit}
+.ghost-thumbnails button[aria-pressed=true]{border-color:var(--ink)}
+.ghost-thumbnails img{display:block;width:100%;aspect-ratio:3/4;object-fit:cover}
+.ghost-story,.ghost-material,.ghost-specs{padding:70px 7%;border-top:1px solid var(--line)}
+.ghost-story h2,.ghost-material h2,.ghost-specs h2{font-size:clamp(2.3rem,5vw,4.5rem);line-height:1;letter-spacing:-.055em;margin:.3em 0}
+.ghost-story>p:not(.eyebrow),.ghost-material p:not(.eyebrow){max-width:440px;line-height:1.65;color:#666}
+.ghost-scenes,.ghost-material,.ghost-specs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}
+.ghost-scenes{margin-top:32px}
+.ghost-scenes figure,.ghost-specs dl,.ghost-specs dd{margin:0}
+.ghost-scenes img,.ghost-material img{display:block;width:100%;border-radius:24px}
+.ghost-scenes figcaption{margin-top:12px}
+.ghost-material{align-items:center;gap:7vw}
+.ghost-specs dl>div{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:18px;padding:16px 0;border-bottom:1px solid var(--line)}
+.ghost-specs dt{color:#666}
+@media(max-width:760px){
+  .ghost-gallery{width:100%}
+  .ghost-gallery .ghost-product-image{margin:0}
+  .ghost-thumbnails{gap:8px}
+  .ghost-scenes,.ghost-material,.ghost-specs{grid-template-columns:minmax(0,1fr)}
+  .ghost-story,.ghost-material,.ghost-specs{padding:48px 5%}
+}
