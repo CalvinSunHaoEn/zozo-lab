@@ -12,7 +12,7 @@ button,.pill-link,.primary-link,.outline-button{border-radius:var(--action-radiu
 }
 .header-right button{min-height:var(--compact-action-height)}
 .menu-icon{border-radius:50%!important}
-.gallery-thumbnails button{border-radius:var(--action-radius)!important}
+.gallery-thumbnails button{border-radius:12px!important}
 .filter-form select{border-radius:var(--action-radius);padding:12px 18px;min-height:var(--action-height)}
 @media(max-width:760px){
  .pill-link,.primary-link,.detail-info .outline-button{min-height:var(--action-height);padding:11px 20px}
