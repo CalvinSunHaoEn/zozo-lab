@@ -3,7 +3,7 @@ const ghostHeroImage = 'assets/products/mr-ghost/v11/hero-cutout.png';
 const ghostInquiry='mailto:hello@zozo-lab.com?subject=Mr.%20Ghost%20%E2%80%94%20Product%20enquiry';
 function ghostPhoto(alt='Mr. Ghost lamp',extra=''){return `<img class="crop art-ghost ${extra}" src="assets/products/mr-ghost/studio-approved-v1.png" alt="${alt}" width="1085" height="1449" loading="lazy">`;}
 function ghostCard(p){return `<article class="product-card ghost-card"><a class="visual" href="#/product/mr-ghost" aria-label="View Mr. Ghost lamp">${ghostPhoto('Mr. Ghost — frosted white lamp with black sunglasses and yellow shoes')}</a><div class="card-topline"><span class="card-badge">Desk lamp</span><span class="card-price"><span class="price-pending">Contact for<br>pricing</span></span></div><p class="card-series">Lighting</p><div class="metadata"><h3><a href="#/product/mr-ghost">Mr. Ghost</a></h3><span>Explore ↗</span></div><button class="save-small" data-save="mr-ghost" aria-label="Save Mr. Ghost to your cart" aria-pressed="${saved.includes('mr-ghost')}">${saveText('mr-ghost')}</button></article>`;}
-function ghostFeature(){return `<section class="ghost-feature"><a class="ghost-feature-image" href="#/product/mr-ghost" aria-label="Explore Mr. Ghost lamp"><img class="ghost-feature-cutout" src="${ghostHeroImage}" alt="Mr. Ghost glowing softly through a frosted opal-white shade" loading="lazy"></a><div class="ghost-feature-copy"><p class="eyebrow">Meet Mr. Ghost / Lighting</p><h2>A LITTLE<br>COMPANY.<br><span>A SOFTER LIGHT.</span></h2><p>Sunglasses on. Warm side out. A desk companion with a little attitude, made to brighten the everyday.</p><a class="pill-link dark" href="#/product/mr-ghost">Meet Mr. Ghost <span>↗</span></a></div></section>`;}
+function ghostFeature(){return `<section class="ghost-feature"><a class="ghost-feature-image ghost-feature-scenes" href="#/product/mr-ghost" aria-label="Explore Mr. Ghost lamp"><img src="${ghostAssetBase}/daylight-off.png" alt="Mr. Ghost switched off in daylight" loading="lazy"><img src="${ghostAssetBase}/evening-on.png" alt="Mr. Ghost glowing at dusk" loading="lazy"></a><div class="ghost-feature-copy"><p class="eyebrow">Meet Mr. Ghost / Lighting</p><h2>A LITTLE<br>COMPANY.<br><span>A SOFTER LIGHT.</span></h2><p>Sunglasses on. Warm side out. A desk companion with a little attitude, made to brighten the everyday.</p><a class="pill-link dark" href="#/product/mr-ghost">Meet Mr. Ghost <span>↗</span></a></div></section>`;}
 const ghostAssetBase = 'assets/products/mr-ghost/v11';
 const ghostViews = ['Front', 'Side', 'Back'];
 
@@ -13,21 +13,20 @@ function ghostPage() {
     <span>${view}</span>
   </button>`).join('');
 
-  return `<section class="detail ghost-detail">
-    <div class="ghost-gallery" aria-label="Mr. Ghost image gallery">
-      <div class="ghost-product-image">
+  return `<section class="detail store-detail ghost-detail">
+    <div class="ghost-product-image detail-media" aria-label="Mr. Ghost image gallery">
         <img data-ghost-main src="${ghostAssetBase}/front.png" alt="Mr. Ghost front view" fetchpriority="high">
-      </div>
-      <div class="ghost-thumbnails" role="group" aria-label="Choose Mr. Ghost view">${thumbnails}</div>
     </div>
     <div class="detail-info">
-      <a class="back" href="#/shop/lighting">← Back to lighting</a>
       <p class="eyebrow">ZOZO Lab / Lighting</p>
       <h1>Mr. Ghost</h1>
       <p class="ghost-lead">A little office attitude.<br>A softer side after hours.</p>
-      <p class="product-description">Sunglasses on. Tie in place. Mr. Ghost keeps you company through the working day, then brings a gentle glow to your evening.</p>
+      <p class="price">Contact for pricing</p>
       <a class="primary-link" href="${ghostInquiry}">Enquire about Mr. Ghost <span aria-hidden="true">↗</span></a>
       <p class="release-note">Contact hello@zozo-lab.com for pricing, availability and ordering details.</p>
+    </div>
+    <div class="ghost-thumbnails detail-thumbnails" role="group" aria-label="Choose Mr. Ghost view">${thumbnails}</div>
+    <div class="detail-notes">
       <button class="outline-button" data-save="mr-ghost" aria-pressed="${saved.includes('mr-ghost')}">${saved.includes('mr-ghost') ? 'Saved to your cart −' : 'Save to your cart +'}</button>
     </div>
   </section>
@@ -73,7 +72,7 @@ document.addEventListener('click', event => {
   const button = event.target.closest('button[data-ghost-view]');
   if (!button) return;
 
-  const gallery = button.closest('.ghost-gallery');
+  const gallery = button.closest('.ghost-detail');
   const image = gallery.querySelector('[data-ghost-main]');
   const view = button.dataset.ghostView;
   image.src = `${ghostAssetBase}/${view.toLowerCase()}.png`;
